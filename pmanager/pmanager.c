@@ -100,6 +100,8 @@ bool pmanager_new(const char* name, const char* password)
 	}
 
 	printf("Generated passowrd for \"%s\": %s\n", name, generated_password);
+
+	pmanager_close_db(pm.db);
 	return true;
 
 db_error:
@@ -136,6 +138,7 @@ bool pmanager_list(const char* password)
 		return false;
 	}
 
+	pmanager_close_db(pm.db);
 	return true;
 }
 
@@ -168,6 +171,7 @@ bool pmanager_delete(const char* name)
 		goto db_error;
 	}
 
+	pmanager_close_db(db);
 	return true;
 
 db_error:
@@ -196,5 +200,6 @@ bool pmanager_delete_all()
 		return false;
 	}
 
+	pmanager_close_db(db);
 	return true;
 }
