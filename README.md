@@ -1,5 +1,5 @@
 # pmanager
-A toy but secure password manager created using C, SQLite3 and libtomcrypt
+A toy but secure password manager created using C99, SQLite3 and libtomcrypt
 
 ### Usage
 ----------
